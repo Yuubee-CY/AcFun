@@ -18,7 +18,7 @@
       <div id="login-switch" @click="changeAccount"></div>
       <h3 id="login-header" class="not-select">手机扫码登录</h3>
       <div class="login-cont">
-        <div id="prompt-tips" class="prompt-info"></div>
+        <div id="prompt-tips" class="prompt-info" ref="promptInfo"></div>
         <div class="login-box">
           <div id="qrcode" class="login-left">
             <div id="code" class="not-select" ref="code"></div>
@@ -46,6 +46,8 @@
                 <div class="area">
                   <i class="inp-icon icon icon-user"></i>
                   <input id="ipt-account-login"
+                         @blur="changeAreaUnameBlur($event)"
+                         @focus="changeAreaUnameFocus($event)"
                          class="name l"
                          type="text"
                          spellcheck="false"
@@ -58,6 +60,8 @@
                 <div class="area">
                   <i class="inp-icon icon icon-lock"></i>
                   <input id="ipt-pwd-login"
+                         @blur="changeAreaPwdBlur($event)"
+                         @focus="changeAreaPwdFocus($event)"
                          type="password"
                          autocomplete="off"
                          data-name="密码"
@@ -67,7 +71,7 @@
                   <span class="clear-fix"></span>
                 </div>
                 <div class="area-tool">
-                  <div class="btn-login">登 录</div>
+                  <div @click="loginVerify($event)" class="btn-login">登 录</div>
                 </div>
               </div>
             </div>
@@ -78,7 +82,8 @@
       </div>
       <div class="login-options clearfix">
         <a class="login-help" target="_blank" href="javascript:;">帮助手册</a>
-        <a href="javascript:;" target="_blank" id="login-account-switch">帐号登录</a>
+        <a id="login-account-switch" @click="showLogin" v-if="showLoginSwitch">帐号登录</a>
+        <a href="javascript:;" target="_blank" id="login-account-switch" v-else="showLoginSwitch">忘记密码</a>
         <a href="javascript:;" target="_blank" class="register">立即注册</a>
       </div>
     </div>
@@ -94,21 +99,24 @@ export default {
   name: "LoginContainer",
   data() {
     return {
+      showLoginSwitch: true,
       srcUrl: "",
       code_data: "您好！这是爷的二维码，但他还没实现动态随机。",
       thumbImg: require("../../../assets/img/LoginBodyImg/avatar.jpg")
     }
   },
   methods: {
-    changeAccount(e) {
+    changeAccount() {
       const login = this.$refs.login
       const loginHeader = login.childNodes.item(2)
       if (login.className == '') {
         login.className += 'login-account'
         loginHeader.innerHTML = '账号登录'
+        this.showLoginSwitch = false
       } else {
         login.className = ''
         loginHeader.innerHTML = '手机扫码登录'
+        this.showLoginSwitch = true
       }
     },
     // 生成二维码
@@ -138,6 +146,41 @@ export default {
       // image.src = canvas.toDataURL("image/png")
       this.srcUrl = canvas.toDataURL("image/png")
       return image;
+    },
+    showLogin() {
+      const login = this.$refs.login
+      const loginHeader = login.childNodes.item(2)
+      if (login.className == '') {
+        login.className += 'login-account'
+        loginHeader.innerHTML = '账号登录'
+        this.showLoginSwitch = false
+      }
+    },
+    changeAreaUnameBlur(e){
+      if(e.target.value.trim() == '' ){
+        e.target.parentNode.style.border = '1px solid #ff0000'
+      }
+    },
+    changeAreaUnameFocus(e){
+      e.target.parentNode.style.border = '1px solid #ddd'
+    },
+    changeAreaPwdBlur(e){
+      if(e.target.value.trim() == '' ){
+        e.target.parentNode.style.border = '1px solid #ff0000'
+      }
+    },
+    changeAreaPwdFocus(e){
+      e.target.parentNode.style.border = '1px solid #ddd'
+    },
+    loginVerify(e){
+      let uname = e.target.parentNode.parentNode.children[0].children[1]
+      let pwd = e.target.parentNode.parentNode.children[1].children[1]
+      let promptInfo = this.$refs.promptInfo
+      if(uname.value.trim() == ''){
+        promptInfo.innerHTML = '用户名不能为空。'
+        promptInfo.style.display = 'block'
+        uname.parentNode.style.border = '1px solid #ff0000'
+      }
     }
   },
   mounted() {
@@ -149,5 +192,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

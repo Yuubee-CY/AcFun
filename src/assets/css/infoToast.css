@@ -30,6 +30,7 @@
 #g-toast p.info {
   background: #205f98;
   border-color: #1d5589;
+  vertical-align: middle;
 }
 
 #g-toast p.error {
@@ -49,6 +50,16 @@
 
 #g-toast p i {
   font-size: 15px;
-  margin-right: 5px;
+  margin-right: 4px;
   vertical-align: middle
+}
+#g-toast p.info i{
+  display: block;
+  width: 18px;
+  height: 18px;
+  float: left;
+  background: url("../../assets/img/LoginBodyImg/peomt_info.svg") no-repeat;
+  background-size: 18px 18px;
+  margin-top: 3px;
+  box-sizing: border-box;
 }
