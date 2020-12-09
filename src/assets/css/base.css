@@ -1,0 +1,64 @@
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  font-family: AcFun Symbol, Helvetica Neue, Helvetica, Arial, pingfang SC, Microsoft Yahei, STHeiti, sans-serif;
+  font-size: 12px !important;
+  line-height: 1.6;
+  color: #666;
+  background-color: #f8f8f8;
+  scrollbar-arrow-color: none;
+  scrollbar-track-color: #fff;
+  scrollbar-face-color: #999;
+  scrollbar-shadow-color: none;
+}
+
+
+.clear-fix::after {
+  clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+}
+
+#login-header-nav .nav-parent > div, #login-header-nav .nav-parent > ul {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#login-header-nav .nav-parent > .nav-left {
+  position: relative;
+}
+
+#login-header-nav .nav-parent .nav-left > div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a, button, input {
+  outline: none;
+}

@@ -1,0 +1,54 @@
+#g-toast {
+  position: fixed;
+  left: 0;
+  bottom: 45px;
+  font-size: 12px;
+  line-height: 18px;
+  z-index: 10
+}
+
+#g-toast p {
+  position: relative;
+  z-index: 11;
+  display: table;
+  margin: 0 0 8px;
+  padding: 0 8px 0 4px;
+  width: auto;
+  height: auto;
+  border-left: 4px solid #0068b8;
+  border-radius: 1px;
+  background-color: #0074cc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  color: #fff;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-size: 12px;
+  line-height: 24px;
+  left: -100%
+}
+
+#g-toast p.info {
+  background: #205f98;
+  border-color: #1d5589;
+}
+
+#g-toast p.error {
+  background: #df4d34;
+  border-color: #d63c22
+}
+
+#g-toast p.success {
+  background: #97ba00;
+  border-color: #88a700
+}
+
+#g-toast p.warning {
+  background: #f89100;
+  border-color: #df8300
+}
+
+#g-toast p i {
+  font-size: 15px;
+  margin-right: 5px;
+  vertical-align: middle
+}
