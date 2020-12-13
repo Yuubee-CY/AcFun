@@ -48,6 +48,7 @@
                   <input id="ipt-account-login"
                          @blur="changeAreaUnameBlur($event)"
                          @focus="changeAreaUnameFocus($event)"
+                         v-model="formLogin"
                          class="name l"
                          type="text"
                          spellcheck="false"
@@ -102,21 +103,29 @@ export default {
       showLoginSwitch: true,
       srcUrl: "",
       code_data: "您好！这是爷的二维码，但他还没实现动态随机。",
-      thumbImg: require("../../../assets/img/LoginBodyImg/avatar.jpg")
+      thumbImg: require("../../../assets/img/LoginBodyImg/avatar.jpg"),
+      formLogin: ''
     }
   },
   methods: {
     changeAccount() {
       const login = this.$refs.login
       const loginHeader = login.childNodes.item(2)
+      let promptInfo = this.$refs.promptInfo
       if (login.className == '') {
         login.className += 'login-account'
         loginHeader.innerHTML = '账号登录'
         this.showLoginSwitch = false
+        if(promptInfo.innerHTML.trim() == ''){
+          promptInfo.style.display = 'none'
+        }else {
+          promptInfo.style.display = 'block'
+        }
       } else {
         login.className = ''
         loginHeader.innerHTML = '手机扫码登录'
         this.showLoginSwitch = true
+        promptInfo.style.display = 'none'
       }
     },
     // 生成二维码
@@ -157,16 +166,47 @@ export default {
       }
     },
     changeAreaUnameBlur(e){
+      let nextAreaInput = e.target.parentNode.nextSibling.childNodes[1]
+      let patrn = /\s*/;
+      console.log(patrn.exec(nextAreaInput.value.trim()));
+      // if (){
+      //   console.log('有空格')
+      // }
+      let promptInfo = this.$refs.promptInfo
       if(e.target.value.trim() == '' ){
         e.target.parentNode.style.border = '1px solid #ff0000'
+        promptInfo.innerHTML = '用户名不能为空。'
+        promptInfo.style.display = 'block'
+      }else {
+        e.target.parentNode.style.border = '1px solid #ddd'
+        promptInfo.innerHTML = ''
+        promptInfo.style.display = 'none'
+        if(nextAreaInput.value.trim() == ''){
+
+          promptInfo.innerHTML = '密码长度应为6至32个字符之间！'
+          promptInfo.style.display = 'block'
+        }
       }
     },
     changeAreaUnameFocus(e){
       e.target.parentNode.style.border = '1px solid #ddd'
+      let nextAreaInput = e.target.parentNode.nextSibling.childNodes[1]
+      let promptInfo = this.$refs.promptInfo
+      if(e.target.value.trim() == '' && nextAreaInput.value.trim() != ''){
+        promptInfo.innerHTML = '用户名不能为空。'
+        promptInfo.style.display = 'block'
+      }
     },
     changeAreaPwdBlur(e){
+      let promptInfo = this.$refs.promptInfo
       if(e.target.value.trim() == '' ){
         e.target.parentNode.style.border = '1px solid #ff0000'
+        promptInfo.innerHTML = '密码长度应为6至32个字符之间！'
+        promptInfo.style.display = 'block'
+      }else {
+        e.target.parentNode.style.border = '1px solid #ddd'
+        promptInfo.innerHTML = ''
+        promptInfo.style.display = 'none'
       }
     },
     changeAreaPwdFocus(e){
@@ -175,6 +215,8 @@ export default {
     loginVerify(e){
       let uname = e.target.parentNode.parentNode.children[0].children[1]
       let pwd = e.target.parentNode.parentNode.children[1].children[1]
+      console.log(e.target)
+      console.log(uname)
       let promptInfo = this.$refs.promptInfo
       if(uname.value.trim() == ''){
         promptInfo.innerHTML = '用户名不能为空。'
