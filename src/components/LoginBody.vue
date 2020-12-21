@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import LoginMain from "./content/LoginBody/LoginMain";
-import LoginContainer from "./content/LoginBody/LoginContainer";
+import LoginMain from "./LoginBody/LoginMain";
+import LoginContainer from "./LoginBody/LoginContainer";
   export default {
     name: "LoginBody",
     components: {

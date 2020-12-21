@@ -1,9 +1,10 @@
 <template>
   <ul id="header-guide" class="header-guide">
     <li class="guide-item" :class="item.liClassName" v-for="(item,index) in headerGuide" :key="item.liClassName">
-      <a class="icon item" @mouseover="guideIconOver" @mouseleave="guideIconLeave" :class="item.aClassName"
+      <a class="item" @mouseover="guideIconOver" @mouseleave="guideIconLeave" :class="item.aClassName"
          href="javascript:;">
-        <img :src="item.iconUrl" :id="item.iconCurrent" :class="item.iconLittle" alt="">
+        {{item.GuideText}}
+        <img :src="item.iconUrl" :id="item.iconCurrent" :class="item.iconLittle" alt="" v-if="item.iconShow">
       </a>
       <div class="guide-item-con"  :class="item.divClassName" v-if="item.guideItemConShow">
         <ul>
@@ -35,6 +36,8 @@
     data(){
       return{
         headerGuide: [
+          this.$store.state.headerGuide.headerGuideItemMobile,
+          this.$store.state.headerGuide.headerGuideItemUser,
           this.$store.state.headerGuide.headerGuideItemMsg,
           this.$store.state.headerGuide.headerGuideItemHistory,
           this.$store.state.headerGuide.headerGuideItemCollect,
@@ -89,5 +92,4 @@
 </script>
 
 <style scoped>
-
 </style>

@@ -5,10 +5,7 @@
         <img :src="imgSrc" width="88" height="27" loading="lazy">
       </a>
     </div>
-    <div class="channel-guide">
-      <div class="guide-icon">导航</div>
-      <slot></slot>
-    </div>
+    <slot></slot>
   </div>
 </template>
 
@@ -19,7 +16,7 @@
     data(){
       return{
         //AcFunLogo图片
-        imgSrc: require('../../../assets/img/LoginNavImg/acfunlogo.svg'),
+        imgSrc: require('../../assets/img/LoginNavImg/acfunlogo.svg'),
       }
     }
   }

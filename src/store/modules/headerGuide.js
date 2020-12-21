@@ -1,10 +1,20 @@
 const headerGuide = {
   state: () => ({
     //LoginNav-Data>headerGuide图标的各种属性
+    headerGuideItemMobile: {
+      liClassName: 'download-app',
+      GuideText: '下载客户端'
+    },
+    headerGuideItemUser: {
+      liClassName: 'guide-user',
+      GuideText: '登录/注册',
+      iconShow: false,
+    },
     headerGuideItemMsg: {
       liClassName: 'guide-msg',
-      aClassName: 'icon-message',
+      aClassName: ' icon icon-message',
       guideItemConShow: true,
+      iconShow: true,
       divClassName: 'div-guide-msg',
       iconUrl: require('../../assets/img/LoginNavImg/icon_message.svg'),
       iconUrlHover: require('../../assets/img/LoginNavImg/icon_message_hover.svg'),
@@ -20,8 +30,9 @@ const headerGuide = {
     },
     headerGuideItemHistory: {
       liClassName: 'guide-history',
-      aClassName: 'icon-history',
+      aClassName: ' icon icon-history',
       guideItemConShow: true,
+      iconShow: true,
       divClassName: 'div-guide-history',
       iconUrl: require('../../assets/img/LoginNavImg/icon_history.svg'),
       iconUrlHover: require('../../assets/img/LoginNavImg/icon_history_hover.svg'),
@@ -60,6 +71,11 @@ const headerGuide = {
                 hrefUrl: 'javascript:;',
                 VideoTitle: '【小依】Nightglow（崩坏3）【即兴】',
                 progress: '刚刚开始'
+              },
+              {
+                hrefUrl: 'javascript:;',
+                VideoTitle: '【独家★毛巾】sweets parade要一起吃甜食吗~妖狐×僕SS',
+                progress: '观看至05:02'
               }
             ]
           }
@@ -86,16 +102,18 @@ const headerGuide = {
     },
     headerGuideItemCollect: {
       liClassName: 'guide-collect',
-      aClassName: 'icon-collect',
+      aClassName: ' icon icon-collect',
       guideItemConShow: false,
+      iconShow: true,
       iconUrl: require('../../assets/img/LoginNavImg/icon_collect.svg'),
       iconUrlHover: require('../../assets/img/LoginNavImg/icon_collect_hover.svg'),
       iconCurrent: 'iconCollect'
     },
     headerGuideItemCreative: {
       liClassName: 'guide-creative',
-      aClassName: 'icon-creative',
+      aClassName: ' icon icon-creative',
       guideItemConShow: true,
+      iconShow: true,
       divClassName: 'div-guide-creative',
       iconUrl: require('../../assets/img/LoginNavImg/icon_creative.svg'),
       iconUrlHover: require('../../assets/img/LoginNavImg/icon_creative_hover.svg'),
@@ -110,8 +128,9 @@ const headerGuide = {
     },
     headerGuideItemUpload: {
       liClassName: 'guide-upload',
-      aClassName: 'icon-upload',
+      aClassName: ' icon icon-upload',
       guideItemConShow: true,
+      iconShow: true,
       divClassName: 'div-guide-upload',
       iconUrl: require('../../assets/img/LoginNavImg/icon_upload.svg'),
       iconUrlHover: require('../../assets/img/LoginNavImg/icon_upload.svg'),

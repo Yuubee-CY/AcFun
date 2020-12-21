@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import Footer from "./content/LoginFooter/Footer";
-import FooterTop from "./content/LoginFooter/FooterTop";
-import FooterLink from "./content/LoginFooter/FooterLink";
-import FooterBottom from "./content/LoginFooter/FooterBottom";
+import Footer from "./content/MainFooter/Footer";
+import FooterTop from "./content/MainFooter/FooterTop";
+import FooterLink from "./content/MainFooter/FooterLink";
+import FooterBottom from "./content/MainFooter/FooterBottom";
 
 export default {
   name: "LoginFooter",
@@ -19,5 +19,5 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/css/LoginFooter.css";
+@import "../assets/css/MainFooter.css";
 </style>

@@ -11,7 +11,7 @@
           <span class="username"></span>
         </p>
         <p class="notice">
-          <span>3</span>
+          <span>{{ loginInterval }}</span>
           秒后秒后自动跳转至首页...
         </p>
       </div>
@@ -95,6 +95,7 @@
 
 <script>
 import Code from "qrcodejs2"
+import $ from 'jquery'
 
 export default {
   name: "LoginContainer",
@@ -103,8 +104,9 @@ export default {
       showLoginSwitch: true,
       srcUrl: "",
       code_data: "您好！这是爷的二维码，但他还没实现动态随机。",
-      thumbImg: require("../../../assets/img/LoginBodyImg/avatar.jpg"),
-      formLogin: ''
+      thumbImg: require("../../assets/img/LoginBodyImg/avatar.jpg"),
+      formLogin: '',
+      loginInterval: 3
     }
   },
   methods: {
@@ -168,7 +170,6 @@ export default {
     changeAreaUnameBlur(e){
       let nextAreaInput = e.target.parentNode.nextSibling.childNodes[1]
       let patrn = /\s*/;
-      console.log(patrn.exec(nextAreaInput.value.trim()));
       // if (){
       //   console.log('有空格')
       // }
@@ -215,13 +216,34 @@ export default {
     loginVerify(e){
       let uname = e.target.parentNode.parentNode.children[0].children[1]
       let pwd = e.target.parentNode.parentNode.children[1].children[1]
-      console.log(e.target)
-      console.log(uname)
       let promptInfo = this.$refs.promptInfo
       if(uname.value.trim() == ''){
         promptInfo.innerHTML = '用户名不能为空。'
         promptInfo.style.display = 'block'
         uname.parentNode.style.border = '1px solid #ff0000'
+      }
+      if(uname.value == '123' && pwd.value == '02'){
+        $('#login').animate({
+          opacity: 0,
+        },800,() => {
+          $('.after-login').siblings().each((index,item) => {
+            item.style.display = 'none'
+          })
+          $('.after-login')[0].style.display = 'block'
+          $('#login').animate({
+            opacity: 1
+          },800,() => {
+            clearTimeout(timer)
+            this.loginInterval -= 1
+            let interval = setInterval(() => {
+              this.loginInterval -= 1
+            },1000)
+            let timer = setTimeout(() => {
+              this.$router.push('index')
+              clearInterval(interval)
+            },2000)
+          })
+        })
       }
     }
   },

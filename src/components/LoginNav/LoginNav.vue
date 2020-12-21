@@ -1,11 +1,9 @@
 <template >
-  <div class="clear-fix header-top-con">
-    <nav id="login-header-nav" class="login-header-nav">
-      <div class="nav-parent clear-fix">
-        <slot></slot>
-      </div>
-    </nav>
-  </div>
+  <nav id="login-header-nav" class="login-header-nav">
+    <div class="nav-parent clear-fix">
+      <slot></slot>
+    </div>
+  </nav>
 </template>
 
 <script>
