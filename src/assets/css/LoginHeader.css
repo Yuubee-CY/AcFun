@@ -298,6 +298,7 @@
 /*header-guide*/
 [data-c-w-header] .header-guide {
   /*width: 311px;*/
+  width: auto;
   height: 60px;
   position: absolute;
   display: inline-block;
