@@ -1,0 +1,84 @@
+.home-main-content {
+  width: 1160px;
+  margin: 0 auto 80px;
+}
+
+.home-main-content #pagelet_top_area {
+  min-height: 252px;
+  margin: 10px 0 46px;
+}
+
+#top_slider_area {
+  height: 252px;
+}
+
+.top-slider {
+  position: relative;
+  width: 482px;
+  height: 247px;
+  display: inline-block;
+  margin-right: 18px;
+}
+
+.top-slider .swiper-container {
+  width: 482px;
+  height: 247px;
+  border-radius: 3px;
+}
+
+.swiper-pagination{
+  text-align: right;
+  height: 28px;
+  line-height: 28px;
+  padding-right: 6px;
+  box-sizing: border-box;
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+}
+
+.swiper-slide p{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(70% - 10px);
+  height: 28px;
+  padding: 30px 30% 0 10px;
+  line-height: 28px;
+  color: #fff;
+  font-weight: 700;
+  background: url("../img/SwiperItem/gradient_bg.png")0 bottom repeat-x;
+  overflow: hidden;
+  word-break: break-all;
+  word-wrap: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 100%;
+  background: #fff;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #FD4C5D;
+  width: 16px;
+  border-radius: 8px;
+}
+
+.top_slider_area {
+  height: 252px;
+}
+
+.slider-right-images {
+  position: relative;
+  left: 250px;
+  top: 10px;
+}

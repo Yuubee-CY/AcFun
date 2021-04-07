@@ -2,7 +2,7 @@
   <ul id="header-guide" class="header-guide">
     <li class="guide-item" :class="item.liClassName" v-for="(item,index) in headerGuide" :key="item.liClassName">
       <a class="item" @mouseover="guideIconOver" @mouseleave="guideIconLeave" :class="item.aClassName"
-         href="javascript:;">
+         :href="item.headerGuideHref" target="_blank">
         {{item.GuideText}}
         <img :src="item.iconUrl" :id="item.iconCurrent" :class="item.iconLittle" alt="" v-if="item.iconShow">
       </a>

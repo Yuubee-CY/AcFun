@@ -3,12 +3,12 @@ const headerGuide = {
     //LoginNav-Data>headerGuide图标的各种属性
     headerGuideItemMobile: {
       liClassName: 'download-app',
-      GuideText: '下载客户端'
+      GuideText: '下载客户端',
     },
     headerGuideItemUser: {
       liClassName: 'guide-user',
       GuideText: '登录/注册',
-      iconShow: false,
+      headerGuideHref: "../login"
     },
     headerGuideItemMsg: {
       liClassName: 'guide-msg',

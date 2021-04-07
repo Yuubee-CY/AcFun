@@ -39,34 +39,6 @@
   background-image: url("../img/IndexBanner/banner_pendant.png");
 }
 
-.top-slider{
-  border-radius: 5px;
-  position: relative;
-  left: 10%;
-}
-
-.swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  display: inline-block;
-  border-radius: 100%;
-  background: #000 ;
-  opacity: 0.2;
-}
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  background: #FD4C5D;
-  width: 16px;
-  border-radius: 8px;
-}
-.top_slider_area{
-  height: 252px;
-}
-.slider-right-images{
-  position: relative;
-  left: 250px;
-  top: 10px;
-}
 .login-a{
   color: #999;
   font-size: 12px;

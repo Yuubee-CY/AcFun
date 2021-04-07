@@ -222,7 +222,7 @@ export default {
         promptInfo.style.display = 'block'
         uname.parentNode.style.border = '1px solid #ff0000'
       }
-      if(uname.value == '123' && pwd.value == '02'){
+      if(uname.value == 'mr' && pwd.value == 'mrsoft'){
         $('#login').animate({
           opacity: 0,
         },800,() => {

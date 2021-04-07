@@ -157,14 +157,34 @@ a.logo {
 .header-guide .guide-user{
   display: inline-block !important;
 }
-.header-guide .download-app .item::after{
+.header-guide .download-app .item::before{
+  content: "";
+  position: relative;
+  top: -1px;
+  vertical-align: middle;
   display: inline-block;
   width: 17px;
   height: 17px;
   background: url("../img/IndexHeader/icon_phone.svg") no-repeat;
 }
+.header-guide .download-app:hover ::after{
+  position: absolute;
+  content: "";
+  display: block;
+  width: 180px;
+  height: 200px;
+  padding: 10px;
+  z-index: 99;
+  background: url("../img/IndexHeader/app-download.png") no-repeat 10px 10px;
+  background-color: #fff;
+  border-radius: 0px 0px 3px 3px;
+  box-shadow: 0px 5px 5px rgba(0,0,0,.2);
+}
 @media screen and (max-width: 1280px) {
   .wp {
     width: 1080px
   }
+}
+.header-guide li a{
+  cursor: pointer;
 }

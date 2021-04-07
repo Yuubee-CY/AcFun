@@ -3,7 +3,7 @@
     <a href="javascript:;">
       <img :src="imgUrl" width="78" height="24" loading="lazy">
     </a>
-    <p>Copyright © 2007-2020 AcFun. 保留所有权利</p>
+    <p>Copyright © 2002-2021 Yuubee-AcFun. 保留所有权利</p>
   </div>
 </template>
 

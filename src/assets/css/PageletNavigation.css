@@ -1,0 +1,75 @@
+#pagelet-navigation{
+  height: 47px;
+  visibility: visible;
+}
+.top-nav{
+  font-size: 0;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #fff;
+}
+.wp{
+  margin: 0 auto;
+}
+.top-nav .first-container{
+  width: 1190px;
+  display: block;
+  height: 46px;
+  overflow: hidden;
+}
+.top-nav .first-container .first-item{
+  display: inline-block;
+  padding-right: 28px;
+  font-size: 14px;
+}
+.top-nav .first-container .nav-rank{
+  float: right;
+  margin-right: -15px;
+}
+.top-nav .first-container .nav-rank .first-link::before{
+  content: "";
+  display: inline-block;
+  vertical-align: inherit;
+  margin-right: 7px;
+  width: 15px;
+  height: 15px;
+  background: url("../img/IndexNav/nav_rank.svg") no-repeat;
+  background-size: 17px 17px;
+}
+.top-nav .first-container .first-item .first-link{
+  display: block;
+  padding: 0 6px;
+  color: #333;
+  height: 46px;
+  line-height: 46px;
+  box-sizing: border-box;
+}
+.top-nav .first-container .first-item .second-container{
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  background-color: hsla(0,0%,100%,.9);
+  box-shadow: 0 3px 3px rgba(0,0,0,.1);
+  border-top: 1px solid #e5e5e5;
+  border-radius: 0 0 3px 3px;
+  display: none;
+}
+.top-nav .first-container .first-item .second-container ul{
+  position: relative;
+  display: inline-block;
+}
+.top-nav .first-container .first-item .second-container .second-item{
+  display: inline-block;
+  margin-right: 20px;
+}
+.top-nav .first-container .first-item .second-container .second-item .second-link{
+  display: block;
+  padding: 0 6px;
+  color: #333;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+}
