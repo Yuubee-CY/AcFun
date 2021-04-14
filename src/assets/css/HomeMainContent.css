@@ -1,9 +1,11 @@
-.home-main-content {
-  width: 1160px;
+#home-main-content {
+  /*width: 1163px;*/
   margin: 0 auto 80px;
+  position: relative;
+  height: auto;
 }
 
-.home-main-content #pagelet_top_area {
+#home-main-content #pagelet_top_area {
   min-height: 252px;
   margin: 10px 0 46px;
 }
@@ -81,4 +83,12 @@
   position: relative;
   left: 250px;
   top: 10px;
+}
+.wp{
+  width: 1163px;
+}
+@media screen and (max-width: 1280px) {
+  .wp {
+    width: 1080px
+  }
 }

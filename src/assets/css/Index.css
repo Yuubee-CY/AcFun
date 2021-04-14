@@ -1,7 +1,11 @@
 
 #pagelet-banner {
+  width: 100%;
   height: 180px;
   visibility: visible;
+  position: absolute;
+  top: 46px;
+  left: 0;
 }
 
 .page-top-banner {

@@ -1,6 +1,8 @@
 <template>
-  <div class="home-main-content">
+  <div id="home-main-content"  class="wp">
     <pagelet-top-area></pagelet-top-area>
+
+    <div id="g-toast"></div>
   </div>
 </template>
 

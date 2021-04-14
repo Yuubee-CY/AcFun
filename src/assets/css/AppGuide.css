@@ -57,3 +57,10 @@ img{
   background-size: 100%;
   cursor: pointer;
 }
+.autoClose{
+  display: block;
+  position: absolute;
+  top: 11px;
+  right: 32px;
+  color: #777;
+}

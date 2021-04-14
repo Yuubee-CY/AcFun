@@ -103,7 +103,7 @@ export default {
     return {
       showLoginSwitch: true,
       srcUrl: "",
-      code_data: "您好！这是爷的二维码，但他还没实现动态随机。",
+      code_data: "您好！这是我的二维码。",
       thumbImg: require("../../assets/img/LoginBodyImg/avatar.jpg"),
       formLogin: '',
       loginInterval: 3

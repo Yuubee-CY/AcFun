@@ -1,11 +1,17 @@
 #pagelet-navigation{
-  height: 47px;
+  width: 100%;
+  height: 46px;
+  position: absolute;
+  top: 227px;
+  left: 0;
   visibility: visible;
+
 }
 .top-nav{
   font-size: 0;
   border-bottom: 1px solid #e5e5e5;
   background-color: #fff;
+  height: 47px;
 }
 .wp{
   margin: 0 auto;

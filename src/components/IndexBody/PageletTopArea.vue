@@ -15,7 +15,6 @@
       </div>
     </div>
     <ul class="slider-right-images">
-
     </ul>
   </div>
 </template>

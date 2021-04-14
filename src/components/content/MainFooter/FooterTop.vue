@@ -65,7 +65,8 @@ export default {
         let countSpan = document.createElement('span')
         let countI = document.createElement('i')
         countSpan.innerHTML = '连续点击了' + this.countNum + '次，APM为'+APM+'次/分'
-        let gToast = this.$refs.acImg.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].children[2]
+        // let gToastP = this.$refs.acImg.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].children[2]
+        let gToast = document.getElementById("g-toast");
         if(gToast.children.length > 0){
           for(let i = 0; i <= gToast.children.length; i++){
             gToast.children[i].remove()
@@ -73,7 +74,8 @@ export default {
         }
         gToast.appendChild(countP)
 
-        let ToastP = this.$refs.acImg.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].children[2].children[0]
+        let ToastP = gToast.children[0]
+
         if(countI.className.indexOf('icon icon-info') == -1){
           countI.className = 'icon icon-info'
         }
