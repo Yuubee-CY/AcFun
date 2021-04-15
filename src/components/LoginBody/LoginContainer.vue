@@ -103,8 +103,7 @@ export default {
     return {
       showLoginSwitch: true,
       srcUrl: "",
-      code_data: "您好！这是我的二维码。",
-      thumbImg: require("../../assets/img/LoginBodyImg/avatar.jpg"),
+      code_data:img/LoginBodyImg/avatar.jpg"),
       formLogin: '',
       loginInterval: 3
     }
@@ -113,7 +112,8 @@ export default {
     changeAccount() {
       const login = this.$refs.login
       const loginHeader = login.childNodes.item(2)
-      let promptInfo = this.$refs.promptInfo
+      let promptInfo = this.$refs.promptInfo "您好！这是我的二维码。",
+        thumbImg: require("../../assets/
       if (login.className == '') {
         login.className += 'login-account'
         loginHeader.innerHTML = '账号登录'
