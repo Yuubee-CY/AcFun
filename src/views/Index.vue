@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import IndexHeader from "@/components/IndexHeader/IndexHeader";
-import HomeMainContent from "@/components/IndexBody/HomeMainContent";
-import MainFooter from "@/components/MainFooter";
-import AppGuide from "@/components/content/AppGuide";
+import IndexHeader from "components/IndexHeader/IndexHeader";
+import HomeMainContent from "components/IndexBody/HomeMainContent";
+import MainFooter from "components/MainFooter";
+import AppGuide from "components/content/AppGuide";
   export default {
     name: "Index",
     components: {

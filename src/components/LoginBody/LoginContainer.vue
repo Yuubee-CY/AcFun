@@ -103,7 +103,7 @@ export default {
     return {
       showLoginSwitch: true,
       srcUrl: "",
-      code_data:"您好！这是我的二维码。",
+      code_data: "您好！这是我的二维码。",
       formLogin: '',
       thumbImg: require("../../assets/img/LoginBodyImg/avatar.jpg"),
       loginInterval: 3
@@ -119,9 +119,9 @@ export default {
         login.className += 'login-account'
         loginHeader.innerHTML = '账号登录'
         this.showLoginSwitch = false
-        if(promptInfo.innerHTML.trim() == ''){
+        if (promptInfo.innerHTML.trim() == '') {
           promptInfo.style.display = 'none'
-        }else {
+        } else {
           promptInfo.style.display = 'block'
         }
       } else {
@@ -168,81 +168,81 @@ export default {
         this.showLoginSwitch = false
       }
     },
-    changeAreaUnameBlur(e){
+    changeAreaUnameBlur(e) {
       let nextAreaInput = e.target.parentNode.nextSibling.childNodes[1]
       let patrn = /\s*/;
       // if (){
       //   console.log('有空格')
       // }
       let promptInfo = this.$refs.promptInfo
-      if(e.target.value.trim() == '' ){
+      if (e.target.value.trim() == '') {
         e.target.parentNode.style.border = '1px solid #ff0000'
         promptInfo.innerHTML = '用户名不能为空。'
         promptInfo.style.display = 'block'
-      }else {
+      } else {
         e.target.parentNode.style.border = '1px solid #ddd'
         promptInfo.innerHTML = ''
         promptInfo.style.display = 'none'
-        if(nextAreaInput.value.trim() == ''){
+        if (nextAreaInput.value.trim() == '') {
 
           promptInfo.innerHTML = '密码长度应为6至32个字符之间！'
           promptInfo.style.display = 'block'
         }
       }
     },
-    changeAreaUnameFocus(e){
+    changeAreaUnameFocus(e) {
       e.target.parentNode.style.border = '1px solid #ddd'
       let nextAreaInput = e.target.parentNode.nextSibling.childNodes[1]
       let promptInfo = this.$refs.promptInfo
-      if(e.target.value.trim() == '' && nextAreaInput.value.trim() != ''){
+      if (e.target.value.trim() == '' && nextAreaInput.value.trim() != '') {
         promptInfo.innerHTML = '用户名不能为空。'
         promptInfo.style.display = 'block'
       }
     },
-    changeAreaPwdBlur(e){
+    changeAreaPwdBlur(e) {
       let promptInfo = this.$refs.promptInfo
-      if(e.target.value.trim() == '' ){
+      if (e.target.value.trim() == '') {
         e.target.parentNode.style.border = '1px solid #ff0000'
         promptInfo.innerHTML = '密码长度应为6至32个字符之间！'
         promptInfo.style.display = 'block'
-      }else {
+      } else {
         e.target.parentNode.style.border = '1px solid #ddd'
         promptInfo.innerHTML = ''
         promptInfo.style.display = 'none'
       }
     },
-    changeAreaPwdFocus(e){
+    changeAreaPwdFocus(e) {
       e.target.parentNode.style.border = '1px solid #ddd'
     },
-    loginVerify(e){
+    loginVerify(e) {
       let uname = e.target.parentNode.parentNode.children[0].children[1]
       let pwd = e.target.parentNode.parentNode.children[1].children[1]
       let promptInfo = this.$refs.promptInfo
-      if(uname.value.trim() == ''){
+      if (uname.value.trim() == '') {
         promptInfo.innerHTML = '用户名不能为空。'
         promptInfo.style.display = 'block'
         uname.parentNode.style.border = '1px solid #ff0000'
       }
-      if(uname.value == 'mr' && pwd.value == 'mrsoft'){
+      if (uname.value == 'mr' && pwd.value == 'mrsoft') {
         $('#login').animate({
           opacity: 0,
-        },800,() => {
-          $('.after-login').siblings().each((index,item) => {
+        }, 800, () => {
+          $('.after-login').siblings().each((index, item) => {
             item.style.display = 'none'
           })
           $('.after-login')[0].style.display = 'block'
           $('#login').animate({
             opacity: 1
-          },800,() => {
+          }, 800, () => {
             clearTimeout(timer)
             this.loginInterval -= 1
             let interval = setInterval(() => {
               this.loginInterval -= 1
-            },1000)
+            }, 1000)
             let timer = setTimeout(() => {
               this.$router.push('index')
               clearInterval(interval)
-            },2000)
+            }, 2000)
           })
         })
       }

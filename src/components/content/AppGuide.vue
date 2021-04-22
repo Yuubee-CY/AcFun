@@ -15,7 +15,7 @@ export default {
   name: "AppGuide",
   data() {
     return {
-      autoClose: 10
+      autoClose: 5
     }
   },
   methods: {
@@ -26,12 +26,15 @@ export default {
   mounted() {
     this.$refs.appGuide.className = 'app-guide'
     this.$refs.appGuide.style.transform = 'translateX(0px)'
+    this.$refs.appGuide.style.display = 'block'
     setTimeout(() => {
-      setInterval(() => {
+      let intervalTimer = setInterval(() => {
         if (this.autoClose > 1) {
           this.autoClose -= 1
         } else {
           this.appGuideHide()
+          clearInterval(intervalTimer)
+          this.$refs.appGuide.style.display = 'none'
         }
       }, 1000)
     }, 1500)

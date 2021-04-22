@@ -3,6 +3,9 @@
   padding: 20px 0;
   background-color: #ececec;
   font-size: 12px;
+  /*position: absolute;*/
+  bottom: 0;
+  width: 100%;
 }
 
 .wp {

@@ -1,5 +1,5 @@
 <template>
-  <div id="home-main-content"  class="wp">
+  <div id="home-main-content" class="wp">
     <pagelet-top-area></pagelet-top-area>
 
     <div id="g-toast"></div>
@@ -8,6 +8,7 @@
 
 <script>
 import PageletTopArea from "@/components/IndexBody/PageletTopArea";
+
 export default {
   name: "HomeMainContent",
   components: {
@@ -17,5 +18,5 @@ export default {
 </script>
 
 <style scoped>
-  @import "../../assets/css/HomeMainContent.css";
+@import "../../assets/css/HomeMainContent.css";
 </style>

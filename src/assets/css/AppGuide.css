@@ -7,13 +7,13 @@
   height: 100px;
   background: rgba(18,18,54,.9);
   transform: translateX(-3000px);
-  transition: 2s all;
-  -webkit-animation: showappguide 2s linear forwards;
-  animation: showappguide 2s linear forwards;
+  transition: 2.5s all;
+  -webkit-animation: showappguide 2.5s linear forwards;
+  animation: showappguide 2.5s linear forwards;
 }
 .app-guide-hide{
-  -webkit-animation: hideappguide 2s linear forwards;
-  animation: hideappguide 2s linear forwards;
+  -webkit-animation: hideappguide 2.5s linear forwards;
+  animation: hideappguide 2.5s linear forwards;
   transform: translateX(-3000px) !important;
 }
 .app-guide .app-guide-content {

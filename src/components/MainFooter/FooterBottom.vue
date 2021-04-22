@@ -12,7 +12,7 @@ export default {
   name: "FooterBottom",
   data(){
     return{
-      imgUrl: require("../../../assets/img/LoginFooterImg/logo-gray.png")
+      imgUrl: require("../../assets/img/LoginFooterImg/logo-gray.png")
     }
   }
 }

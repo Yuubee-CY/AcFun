@@ -28,20 +28,21 @@
   border-radius: 3px;
 }
 
-.swiper-pagination{
+.swiper-pagination {
   text-align: right;
   height: 28px;
   line-height: 28px;
   padding-right: 6px;
   box-sizing: border-box;
 }
+
 .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
   bottom: 0px;
   left: 0;
   width: 100%;
 }
 
-.swiper-slide p{
+.swiper-slide p {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -51,7 +52,7 @@
   line-height: 28px;
   color: #fff;
   font-weight: 700;
-  background: url("../img/SwiperItem/gradient_bg.png")0 bottom repeat-x;
+  background: url("../img/SwiperItem/gradient_bg.png") 0 bottom repeat-x;
   overflow: hidden;
   word-break: break-all;
   word-wrap: normal;
@@ -84,9 +85,11 @@
   left: 250px;
   top: 10px;
 }
-.wp{
+
+.wp {
   width: 1163px;
 }
+
 @media screen and (max-width: 1280px) {
   .wp {
     width: 1080px

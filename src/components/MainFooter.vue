@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import Footer from "./content/MainFooter/Footer";
-import FooterTop from "./content/MainFooter/FooterTop";
-import FooterLink from "./content/MainFooter/FooterLink";
-import FooterBottom from "./content/MainFooter/FooterBottom";
+import Footer from "./MainFooter/Footer";
+import FooterTop from "./MainFooter/FooterTop";
+import FooterLink from "./MainFooter/FooterLink";
+import FooterBottom from "./MainFooter/FooterBottom";
 
 export default {
   name: "LoginFooter",

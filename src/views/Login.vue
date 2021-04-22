@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import LoginHeader from "../components/LoginHeader";
-import LoginBody from "../components/LoginBody";
-import MainFooter from "../components/MainFooter";
+import LoginHeader from "components/LoginHeader";
+import LoginBody from "components/LoginBody";
+import MainFooter from "components/MainFooter";
   export default {
     name: "Login",
     components:{
