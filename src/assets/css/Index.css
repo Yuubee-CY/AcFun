@@ -25,7 +25,10 @@
 }
 
 .page-top-banner .banner-pic {
-  background-image: url("../img/IndexBanner/banner_pic.png");
+  /*background-image: url("../img/IndexBanner/banner_pic.png");*/
+}
+.page-top-banner .banner-pendant {
+  /*background-image: url("../img/IndexBanner/banner_pendant.png");*/
 }
 
 .page-top-banner .banner-pendant {
@@ -39,9 +42,7 @@
   background: no-repeat;
 }
 
-.page-top-banner .banner-pendant {
-  background-image: url("../img/IndexBanner/banner_pendant.png");
-}
+
 
 .login-a{
   color: #999;

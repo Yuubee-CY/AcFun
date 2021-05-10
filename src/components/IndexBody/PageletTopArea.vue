@@ -3,32 +3,51 @@
     <div class="top_slider_area">
       <div class="top-slider">
         <swiper
-          :slides-per-view="1"
-          :space-between="50"
-          :pagination="{ clickable: true }"
+          :autoplay="{
+            delay: 2500,
+            disableOnInteraction: false
+          }"
+          :pagination="{clickable: true}"
+          :lazy="{
+            loadPrevNext: true,
+            loadOnTransitionStart: true,
+           }"
+          :loadPrevNext="true"
+          :loadOnTransitionStart="true"
+          class="swiper-no-swiping"
         >
           <swiper-slide v-for="(item, key) in this.SwiperItemTile">
-            <img :src="SwiperItemSrc[key]" :alt="item">
-            <p>{{ item }}</p>
+            <a :href="SwiperItemUrl[key]" target="_blank">
+              <img :src="SwiperItemSrc[key]" :data-src="SwiperItemSrc[key]" :alt="item">
+              <p>{{ item }}</p>
+            </a>
           </swiper-slide>
         </swiper>
       </div>
+      <ul class="slider-right-images">
+        <li v-for="(item, key) in this.HotItemTile">
+          <a class="hot-video" :href="HotItemUrl[key]" target="_blank">
+            <img :src="HotItemSrc[key]" :data-src="HotItemSrc[key]" :alt="item">
+            <span class="hot-video-title text-overflow">{{ item }}</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <ul class="slider-right-images">
-    </ul>
   </div>
 </template>
 
 <script>
-import SwiperCore, {Navigation, Pagination, Scrollbar, A11y} from 'swiper';
+import SwiperCore, {Navigation, Pagination, Scrollbar, A11y, Autoplay, Lazy} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
+import 'swiper/components/lazy/lazy.scss';
+
 import axios from "axios"
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay, Lazy]);
 export default {
   name: "PageletTopArea",
   components: {
@@ -37,17 +56,17 @@ export default {
   },
   data() {
     return {
-      // SwiperItem: this.$store.state.swiperItem.swiperItem,
       SwiperItemTile: [],
       SwiperItemUrl: [],
-      SwiperItemSrc: []
+      SwiperItemSrc: [],
+      HotItemTile: [],
+      HotItemUrl: [],
+      HotItemSrc: [],
     }
   },
   methods: {},
   mounted() {
-
     // let httpAC = "https://www.acfun.cn";
-
     let httpAC = "/api";
 
     async function req(httpAC) {
@@ -61,63 +80,111 @@ export default {
       })
     }
 
-    function getUrl(res) {
-      let reg = /\\"link\\":\\"(.*?)\\",\\"description\\":/igs
-      let data = res.data
-      let arr = []
-      let result
-      while (result = reg.exec(data)) {
-        // console.log("result",result)
-        arr.push(result[1])
+    class SliderInfo {
+      getSliderUrl(res) {
+        let reg = /\\"link\\":\\"(.*?)\\",\\"description\\":/igs
+        let data = res.data
+        let arr = []
+        let result
+        while (result = reg.exec(data)) {
+          arr.push(result[1])
+        }
+        let arrRes = []
+        arr.forEach(i => {
+          let jointUrl = "https://www.acfun.cn"
+          let temp = jointUrl.concat(i)
+          let reg = /https:\/\/www.acfun.cnhttps:\/\/hd.acfun.cn/;
+          let replaceStr = "https://hd.acfun.cn"
+          let tempUrl = temp.replace(reg, replaceStr)
+          let regUrl = /https/g
+          tempUrl.match(regUrl).length >= 2
+            ? arrRes.push(tempUrl.replace(/https:\/\/www.acfun.cn/, ""))
+            : arrRes.push(temp.replace(reg, replaceStr))
+        })
+        return arrRes
       }
 
-      let arrRes = []
-
-      arr.forEach(i => {
-        let jointUrl = "https://www.acfun.cn"
-        let temp = jointUrl.concat(i)
-        let reg = /https:\/\/www.acfun.cnhttps:\/\/hd.acfun.cn/;
-        let replaceStr = "https://hd.acfun.cn"
-        let tempUrl = temp.replace(reg, replaceStr)
-        let regUrl = /https/g
-        // if ( tempUrl.match(regUrl).length >= 2){
-        //   arrRes.push(tempUrl.replace(/https:\/\/www.acfun.cn/,""))
-        // }else arrRes.push(temp.replace(reg, replaceStr))
-        tempUrl.match(regUrl).length >= 2
-          ? arrRes.push(tempUrl.replace(/https:\/\/www.acfun.cn/,""))
-          : arrRes.push(temp.replace(reg, replaceStr))
-      })
-      return arrRes
-    }
-
-    function getTitle(res) {
-      let reg = /\\"title\\":\\"(.*?)\\",?/igs
-      let data = res.data
-      let arr = []
-      let result
-      while (result = reg.exec(data)) {
-        arr.push(result[1]);
+      getSliderTitle(res) {
+        let reg = /\\"title\\":\\"(.*?)\\",?/igs
+        let data = res.data
+        let arr = []
+        let result
+        while (result = reg.exec(data)) {
+          arr.push(result[1]);
+        }
+        return arr
       }
-      return arr
-    }
 
-    function getSrc(res) {
-      let reg = /\\"image\\":\\"(.*?)\\",?/igs
-      let data = res.data
-      let arr = []
-      let result
-      while (result = reg.exec(data)) {
-        // console.log("result",result)
-        arr.push(result[1])
+      getSliderSrc(res) {
+        let reg = /\\"image\\":\\"(.*?)\\",?/igs
+        let data = res.data
+        let arr = []
+        let result
+        while (result = reg.exec(data)) {
+          // console.log("result",result)
+          arr.push(result[1])
+        }
+        return arr
       }
-      return arr
     }
 
+    class HotInfo {
+      getHotUrl(res) {
+        let reg = /log-item\\" href=\\"(.*?)\\"/igs
+        let data = res.data
+        let arr = []
+        let result
+        while (result = reg.exec(data)) {
+          arr.push(result[1])
+        }
+        let arrRes = []
+        arr.forEach(i => {
+          let jointUrl = "https://www.acfun.cn"
+          let temp = jointUrl.concat(i)
+          let reg = /https:\/\/www.acfun.cnhttps:\/\/hd.acfun.cn/;
+          let replaceStr = "https://hd.acfun.cn"
+          let tempUrl = temp.replace(reg, replaceStr)
+          let regUrl = /https/g
+          tempUrl.match(regUrl).length >= 2
+            ? arrRes.push(tempUrl.replace(/https:\/\/www.acfun.cn/, ""))
+            : arrRes.push(temp.replace(reg, replaceStr))
+        })
+        return arrRes
+      }
+
+      getHotTitle(res) {
+        let reg = /<a class=\\"recommend-video log-item\\"(.*?)\\" data-title=\\"(.*?)\\"><img/igs
+        let data = res.data
+        let arr = []
+        let result
+        while (result = reg.exec(data)) {
+          arr.push(result[2]);
+        }
+        return arr
+      }
+
+      getHotSrc(res) {
+        let reg = /<a class=\\"recommend-video log-item\\"(.*?)\\"><img src=\\"(.*?)\\"/igs
+        let data = res.data
+        let arr = []
+        let result
+        while (result = reg.exec(data)) {
+          arr.push(result[2])
+        }
+        return arr
+      }
+    }
+
+    let HotInfoObj = new HotInfo();
+    let SliderInfoObj = new SliderInfo();
     axios.all([req(httpAC)]).then(
       axios.spread((res) => {
-        this.SwiperItemUrl = getUrl(res)
-        this.SwiperItemTile = getTitle(res)
-        this.SwiperItemSrc = getSrc(res)
+        this.SwiperItemUrl = SliderInfoObj.getSliderUrl(res)
+        this.SwiperItemTile = SliderInfoObj.getSliderTitle(res)
+        this.SwiperItemSrc = SliderInfoObj.getSliderSrc(res)
+        this.HotItemUrl = HotInfoObj.getHotUrl(res)
+        this.HotItemTile = HotInfoObj.getHotTitle(res)
+        this.HotItemSrc = HotInfoObj.getHotSrc(res)
       })
     )
   }

@@ -4,7 +4,6 @@
       <img class="guide-ac" :src="require('../../assets/img/AppGuide/acimg.png')" alt="ac娘">
       <img class="guide-text" src="../../assets/img/AppGuide/download-app-0.png" alt="ac娘">
       <img id="qrcode" class="guide-qrcode" src="../../assets/img/AppGuide/createqrcode.png" width="100%" height="100%">
-      <span class="autoClose">{{ autoClose }}秒自动关闭</span>
       <div id="guide-close" class="guide-close" @click="appGuideHide()"></div>
     </div>
   </div>
@@ -27,17 +26,6 @@ export default {
     this.$refs.appGuide.className = 'app-guide'
     this.$refs.appGuide.style.transform = 'translateX(0px)'
     this.$refs.appGuide.style.display = 'block'
-    setTimeout(() => {
-      let intervalTimer = setInterval(() => {
-        if (this.autoClose > 1) {
-          this.autoClose -= 1
-        } else {
-          this.appGuideHide()
-          clearInterval(intervalTimer)
-          this.$refs.appGuide.style.display = 'none'
-        }
-      }, 1000)
-    }, 1500)
 
   }
 }

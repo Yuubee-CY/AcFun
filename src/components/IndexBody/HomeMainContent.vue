@@ -1,5 +1,5 @@
 <template>
-  <div id="home-main-content" class="wp">
+  <div id="home-main-content">
     <pagelet-top-area></pagelet-top-area>
 
     <div id="g-toast"></div>

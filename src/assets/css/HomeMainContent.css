@@ -1,5 +1,5 @@
 #home-main-content {
-  /*width: 1163px;*/
+  width: 1163px;
   margin: 0 auto 80px;
   position: relative;
   height: auto;
@@ -22,7 +22,7 @@
   margin-right: 18px;
 }
 
-.top-slider .swiper-container {
+.top-slider .swiper-container{
   width: 482px;
   height: 247px;
   border-radius: 3px;
@@ -59,7 +59,13 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
+.swiper-slide a{
+  display: inline-block;
+}
+.swiper-slide img{
+  width: 482px;
+  height: 247px;
+}
 .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
@@ -79,19 +85,53 @@
 .top_slider_area {
   height: 252px;
 }
-
+/*轮播图右侧视频信息*/
 .slider-right-images {
+  float: right;
+  width: 660px;
+  height: 248px;
+  vertical-align: top;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.hot-video{
   position: relative;
-  left: 250px;
-  top: 10px;
+  display: block;
+  width: 206px;
+  height: 114px;
+  border-radius: 3px;
+  background-color: #007aff;
 }
-
-.wp {
-  width: 1163px;
+.hot-video img{
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
-
-@media screen and (max-width: 1280px) {
-  .wp {
-    width: 1080px
-  }
+.slider-right-images li{
+  display: inline-block;
+  margin: 0 21px 20px 0;
+}
+.slider-right-images li:nth-child(3n){
+  margin-right: 0;
+}
+.hot-video-title{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 182px;
+  height: 26px;
+  line-height: 26px;
+  border-radius: 3px;
+  color: #fff;
+  padding: 30px 12px 0px;
+  background: url("../img/SwiperItem/gradient_bg.png") 0 bottom repeat-x;
+}
+.text-overflow {
+  max-width: 100%;
+  display: inherit;
+  overflow: hidden;
+  word-break: break-all;
+  word-wrap: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
