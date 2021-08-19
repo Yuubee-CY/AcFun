@@ -1,0 +1,35 @@
+{
+  "name": "acfun",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "jsdom": "^16.4.0",
+    "normalize.css": "^8.0.1",
+    "qrcodejs2": "0.0.2",
+    "swiper": "^6.4.1",
+    "vue": "^3.0.0",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-axios": "^3.2.4",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "jquery": "^3.5.1",
+    "koa2-cors": "^2.0.6",
+    "less": "^4.1.1",
+    "less-loader": "^8.1.1",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0"
+  }
+}

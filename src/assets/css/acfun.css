@@ -1,0 +1,126 @@
+@font-face {
+  font-family: iconfont;
+  src: url(//cdnfile.aixifan.com/static/common/static/font/iconfont.304576633413888e86c6.eot);
+  src: url(//cdnfile.aixifan.com/static/common/static/font/iconfont.304576633413888e86c6.eot#iefix) format("embedded-opentype"), url(//cdnfile.aixifan.com/static/common/static/font/iconfont.1a2831495b80b6ad2d60.woff) format("woff"), url(//cdnfile.aixifan.com/static/common/static/font/iconfont.94e4130701cc602acc5e.ttf) format("truetype"), url(//cdnfile.aixifan.com/static/common/static/font/iconfont.59e118e02943cd7b9e81.svg) format("svg")
+}
+
+@font-face {
+  font-family: iconfont2;
+  src: url(//cdnfile.aixifan.com/static/common/static/font/iconfont_new.8f284f873f54a4d0b6a7.eot);
+  src: url(//cdnfile.aixifan.com/static/common/static/font/iconfont_new.8f284f873f54a4d0b6a7.eot#iefix) format("embedded-opentype"), url(//cdnfile.aixifan.com/static/common/static/font/iconfont_new.ad1832277e321884b923.woff) format("woff"), url(//cdnfile.aixifan.com/static/common/static/font/iconfont_new.f20fcbb8d7b3ee003060.ttf) format("truetype"), url(//cdnfile.aixifan.com/static/common/static/font/iconfont_new.e076376da05b25ce0346.svg) format("svg")
+}
+
+@font-face {
+  font-family: iconfont_ks;
+  src: url(//cdnfile.aixifan.com/static/common/static/font/iconfont_ks.3d1215b557b14f8b4e20.eot);
+  src: url(//cdnfile.aixifan.com/static/common/static/font/iconfont_ks.3d1215b557b14f8b4e20.eot?#iefix) format("embedded-opentype"), url(//cdnfile.aixifan.com/static/common/static/font/iconfont_ks.431fb2e3a6c7cc3c9882.woff) format("woff"), url(//cdnfile.aixifan.com/static/common/static/font/iconfont_ks.f0cb673cd06a2282a49a.ttf) format("truetype"), url(//cdnfile.aixifan.com/static/common/static/font/iconfont_ks.20bfa25a30f005e2f9fe.svg#iconfont) format("svg")
+}
+
+
+.icon {
+  font-family: iconfont;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: .2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.search-box .form button .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 36px;
+  width: 30px;
+}
+
+.area {
+  clear: both;
+  margin-bottom: 36px;
+}
+
+.nav-parent {
+  /*width: 100%;*/
+  position: relative;
+  max-width: 1710px;
+  min-width: 1050px;
+  margin: 0 auto;
+  height: 60px;
+  background: #fff;
+  border-radius: 3px 3px 0 0;
+  transition: all .1s linear;
+}
+
+@media screen and (max-width: 1280px) {
+  .crop-margin {
+    margin-right: -20px
+  }
+
+  .wp {
+    width: 1080px
+  }
+
+  .header .nav li {
+    margin-right: 22px
+  }
+
+  .column-box .column-left {
+    width: 700px
+  }
+
+  .search-box {
+    margin-right: 0;
+    width: 310px
+  }
+
+  .search-box input {
+    width: 264px
+  }
+
+  .notice .header-notice p {
+    max-width: 850px
+  }
+
+  .area .area-recommend {
+    width: 630px
+  }
+
+  .area-ad a {
+    height: 84px;
+    width: 480px
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .nav-parent {
+    width: calc(100vw - 100px);
+    /*padding: 0 50px;*/
+    /*left: -50px*/
+  }
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1150px) {
+  .nav-parent {
+    width: 1050px;
+    margin: auto calc(50% - 525px)
+  }
+
+  /* .nav-parent {*/
+  /*  width: calc(100vw - 100px);*/
+  /*  padding: 0 50px;*/
+  /*  left: -50px*/
+  /*}*/
+}
+
+@media screen and (min-width: 1151px) and (max-width: 1810px) {
+  .nav-parent {
+    width: calc(100% - 100px);
+    margin: auto 50px
+  }
+
+  /* .nav-parent{*/
+  /*  width: calc(100vw - 100px);*/
+  /*  padding: 0 50px;*/
+  /*  left: -50px*/
+  /*}*/
+}

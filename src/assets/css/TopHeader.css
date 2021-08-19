@@ -1,0 +1,194 @@
+.index-header {
+  background: #fff;
+  width: 100%;
+  height: 273px;
+  box-sizing: border-box;
+  line-height: 46px;
+  top: 0;
+  left: 0;
+  font-size: 12px;
+  z-index: 3;
+}
+
+.wp {
+  width: 1163px;
+  margin: 0 auto
+}
+
+a.logo {
+  display: block;
+  width: 92px;
+  height: 46px;
+  margin-right: 12px;
+  background: url("../img/IndexHeader/acfunlogo.png") no-repeat 0px 7px;
+}
+
+.fl {
+  float: left;
+}
+
+.niudan {
+  display: block;
+  margin-left: 15px;
+}
+
+.niudan i {
+  margin-right: .4em;
+  color: #fd4c5d;
+}
+
+.niudan .icon-shop:before {
+  display: inline-block;
+  content: " ";
+  background: url("../img/IndexHeader/shop.png") no-repeat;
+  width: 17px;
+  height: 17px;
+  background-size: contain;
+  vertical-align: sub;
+}
+.niudan:hover span{
+  color: #fd4c5b;
+}
+
+.index-header .search-box{
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 7px;
+  height: 32px;
+  width: 58%;
+  margin-left: -181px;
+  width: 322px;
+  float: left;
+}
+.index-header .search-box .form{
+  vertical-align: top;
+  height: 32px;
+}
+
+.index-header .search-box .form input{
+  border: 1px solid #e5e5e5;
+  border-right: none;
+  padding: 8px 10px;
+  height: 32px;
+  line-height: 14px;
+  border-radius: 3px 0 0 3px;
+  width: 276px;
+  vertical-align: top;
+  color: #999;
+  box-sizing: border-box;
+}
+.index-header .search-box .form button .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 32px;
+  width: 30px;
+}
+.index-header .search-box .form button {
+  border: none;
+  width: 46px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  vertical-align: top;
+  background: #fd4c5d;
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  top: 0px;
+  font-family: iconfont;
+}
+.index-header .search-box .form button .icon-search::before{
+  position: absolute;
+  left: 0;
+  height: 32px;
+  width: 46px;
+  display: inline;
+  font-size: 16px;
+  content: "";
+  background: url("../img/IndexHeader/icon_search.svg") no-repeat 13px;
+  color: #fff;
+
+}
+.index-header .search-box .form .search-history-body a {
+  margin: 0 0 10px 12px;
+  padding: 0 14px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  border-radius: 4px;
+  line-height: 26px;
+  float: left;
+  color: #666;
+}
+.index-header .search-box .form .search-history-body a:hover{
+  background-color: #f8f8f8;
+}
+.index-header .search-box .search-result .hot-search{
+  line-height: 32px;
+  border-bottom: 1px solid #eee;
+  color: #999;
+  margin: 0 12px;
+  height: 33px;
+}
+/*HeaderGuide*/
+[data-c-w-i-header] .header-guide{
+  float: right;
+  height: 46px;
+  display: inline-block;
+  text-align: right;
+  margin-right: -10px;
+  font-size: 0;
+}
+[data-c-w-i-header] .header-guide .guide-item {
+  position: relative;
+  height: 46px;
+  display: inline-block;
+  text-align: center;
+}
+[data-c-w-i-header] .header-guide .item {
+  display: block;
+  height: 46px;
+  padding: 0 9px;
+  font-size: 12px;
+}
+.header-guide .guide-user{
+  display: inline-block !important;
+}
+.header-guide .download-app .item::before{
+  content: "";
+  position: relative;
+  top: -1px;
+  vertical-align: middle;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: url("../img/IndexHeader/icon_phone.svg") no-repeat;
+}
+.header-guide .download-app:hover ::after{
+  position: absolute;
+  content: "";
+  display: block;
+  width: 180px;
+  height: 200px;
+  padding: 10px;
+  z-index: 99;
+  background: url("../img/IndexHeader/app-download.png") no-repeat 10px 10px;
+  background-color: #fff;
+  border-radius: 0px 0px 3px 3px;
+  box-shadow: 0px 5px 5px rgba(0,0,0,.2);
+}
+@media screen and (max-width: 1280px) {
+  .wp {
+    width: 1080px
+  }
+}
+.header-guide li a{
+  cursor: pointer;
+}
+.index-top{
+  position: relative;
+  /*height: 46px;*/
+}

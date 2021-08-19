@@ -1,0 +1,357 @@
+#main {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.bgCover {
+  background-image: url("../img/LoginBodyImg/loginbg.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 618px;
+}
+
+#main #login-container {
+  width: 1280px;
+  height: 618px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 auto 0 -640px;
+}
+
+#main #login-container #login {
+  width: 430px;
+  height: 408px;
+  position: absolute;
+  top: 88px;
+  left: 640px;
+  -khtml-opacity: .95;
+  -moz-opacity: .95;
+  opacity: .95;
+  border-radius: 3px;
+  padding: 25px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+#main #login-container #login.login-account #login-switch {
+  background: url("../img/LoginBodyImg/scan.png") no-repeat !important;
+}
+
+#main #login-container #login #login-switch {
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: url("../img/LoginBodyImg/account.png") no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+  z-index: 5;
+}
+
+#main #login-container #login #login-header {
+  font-size: 16px;
+  color: #333;
+  line-height: 37px;
+  position: relative;
+  padding-left: 95px;
+}
+
+#main #login-container #login #login-header::before {
+  content: "";
+  display: block;
+  width: 94.5px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../img/LoginBodyImg/logo.png");
+  background-size: 100% 100%;
+}
+
+#main #login-container #login .login-cont {
+  position: relative;
+  height: 300px;
+}
+
+#main #login-container #login #prompt-tips, #main #login-container #login .after-login {
+  display: none;
+}
+
+#main #login-container #login .login-cont .prompt-info {
+  position: absolute;
+  height: 18px;
+  color: #fd4c5b;
+  font-size: 14px;
+  line-height: 18px;
+  left: 35px;
+  top: 22px;
+  z-index: 4;
+  display: none;
+  text-indent: 18px;
+}
+
+#main #login-container #login .login-cont .prompt-info:before {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  left: 0;
+  top: 0;
+  background: url("../img/LoginBodyImg/prompt.png") no-repeat;
+  background-size: 100% 100%;
+  margin-top: 2px;
+}
+
+#main #login-container #login.login-account .app-download,
+#main #login-container #login.login-account .login-tips,
+#main #login-container #login.login-account .login-box {
+  opacity: 0 !important;
+  z-index: -1 !important;
+}
+
+#main #login-container #login.login-account .login-cont #area-login {
+  opacity: 1;
+}
+
+#main #login-container #login .login-cont #area-login {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  height: 289px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 50px;
+  opacity: 0;
+}
+
+#main #login-container #login .login-cont .login-box {
+  width: 100%;
+  height: 240px;
+  position: relative;
+  opacity: 1;
+  z-index: 4;
+}
+
+#main #login-container #login .login-cont .login-box #qrcode {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  box-sizing: border-box;
+  border: 1px solid #dcdcdc;
+  margin: 44px 0 0;
+  float: left;
+}
+
+#main #login-container #login .login-cont .login-box #qrcode #code {
+  padding: 12px;
+}
+
+#main #login-container #login .login-cont .login-box #qrcode .status.status-fresh,
+#main #login-container #login .login-cont .login-box #qrcode .status.status-fresh .status-bg {
+  display: block;
+}
+
+#main #login-container #login .login-cont .login-box .login-right {
+  float: left;
+  width: 210px;
+  height: 246px;
+  background: url("../img/LoginBodyImg/appcenter.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+#main #login-container #login .login-cont .login-box #qrcode .status {
+  width: 168px;
+  height: 168px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#main #login-container #login .login-cont .login-box #qrcode .status .status-bg {
+  width: 168px;
+  height: 168px;
+  background-color: #fff;
+  opacity: .9;
+  position: absolute;
+  z-index: 1;
+}
+
+#main #login-container #login .login-cont .login-box #qrcode .status.status-fresh .status-info {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  line-height: 22px;
+  text-align: center;
+  margin: 49px 0 15px;
+}
+
+#main #login-container #login .login-cont .login-box #qrcode .status.status-fresh .refresh-btn {
+  display: block;
+  width: 105px;
+  height: 36px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  line-height: 36px;
+  background-color: #fd4c5b;
+  border-radius: 5px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#main #login-container #login .login-cont .login-box #qrcode .status > div {
+  display: none;
+  position: relative;
+  z-index: 3;
+}
+
+#main #login-container #login .login-cont .login-tips {
+  color: #9b9b9b;
+  text-align: center;
+  margin-bottom: 6px;
+  z-index: 4;
+  line-height: 17px;
+}
+
+#main #login-container #login .login-cont .app-download {
+  text-decoration: underline;
+  color: #FD4C5D;
+  text-align: center;
+  display: block;
+  margin: 0 auto 15px;
+  font-size: 12px;
+  line-height: 17px;
+  z-index: 4;
+  cursor: pointer;
+}
+
+#main #login-container #login .login-cont .app-download:hover {
+  color: #ec4556;
+}
+
+#main #login-container #login .login-options {
+  height: 20px;
+}
+
+#main #login-container #login .login-options a {
+  font-size: 14px;
+  cursor: pointer;
+  float: left;
+}
+
+#main #login-container #login .login-options a:hover {
+  color: #FD4C5D;
+}
+
+#main #login-container #login .login-options .login-help {
+  color: #9b9b9b;
+  width: 61px;
+  margin-right: 188px;
+}
+
+#main #login-container #login .login-options .register {
+  margin-left: 18px;
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login {
+  text-align: center;
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login .area {
+  width: 318px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  position: relative;
+  margin: 0 auto 15px;
+  background: #fff;
+  -khtml-opacity: .95;
+  -moz-opacity: .95;
+  opacity: .95;
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login .area i,
+#main #login-container #login .login-cont #area-login .area-login #form-login .area input {
+  float: left;
+  vertical-align: middle;
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login .area .inp-icon {
+  width: 24px;
+  height: 24px;
+  background: no-repeat 50%;
+  margin: 8px 8px 0;
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login .area .inp-icon.icon-user {
+  background-image: url("../img/LoginBodyImg/user.png");
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login .area .inp-icon.icon-lock {
+  background-image: url("../img/LoginBodyImg/password.png");
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login .area input {
+  width: 274px;
+  height: 20px;
+  margin-top: 11px;
+  line-height: 20px;
+  text-align: left;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: #fff !important;
+  -webkit-appearance: none;
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login .area-tool {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 90px;
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login .area-tool .btn-login {
+  width: 320px;
+  height: 40px;
+  font-size: 16px;
+  background-color: #FD4C5D;
+  border-radius: 5px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login .area-tool .btn-login:hover {
+  background-color: #ec4556;
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login .area input::-webkit-input-placeholder {
+  font-weight: 300;
+  color: #afb2b3
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login .area input::-moz-placeholder {
+  font-weight: 300;
+  color: #afb2b3
+}
+
+#main #login-container #login .login-cont #area-login .area-login #form-login .area input::-ms-input-placeholder {
+  font-weight: 300;
+  color: #afb2b3
+}
+
+
+input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+  background-color: #fff !important;
+  background-image: none !important;
+  color: #000 !important;
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+}
